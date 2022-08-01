@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  title= title
+  h1 Les Films Ouai
+  p= last_search
+  form()
+    
+    if last_search == ''
+      #searchBar
+        input(type='text', name='search',id='Bar', placeholder='Rechercher un film')
+    else 
+      #searchBar
+        input(type='text', name='search',id='Bar', value= last_search)
+  ul.searchResult
+  .Links 
+    #{result}
+  script(src="/javascripts/searchbar.js") 
+  
